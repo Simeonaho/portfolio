@@ -13,6 +13,7 @@
         <meta type="description" content="Portfolio AHOSSA M. Siméon - Developpeur web mobile full stack.">
         <title>AHOSSA M. Siméon - Developpeur web mobile full stack</title>
         <link rel="stylesheet" href="style.css" type="text/css">  <!--stylesheet (veut dire qu'on va lier une feuille de style) href (le chemin) type (qui est du text/css)-->
+	    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />  <!-- map -->
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     </head>
 
@@ -102,14 +103,38 @@
 			<a href="CV_AHOSSA_M_SIMEON.pdf" download target="_blank">
   			<button title="Mon CV" style="border-radius: 5px;">Télécharger mon CV</button>
 			</a>
-            <h2>Ma carte</h2>
+						
+            <h2>Cliquez sur la carte pour indiquer votre position</h2>
 
-				    <iframe 
-				        width="50" 
-				        height="40" 
-				        src="https://www.openstreetmap.org/export/embed.html?bbox=-187.73437500000003%2C-8.754794702435618%2C49.5703125%2C75.32002523220804&amp;layer=mapnik"
-				        style="border:1px solid black;">
-				    </iframe>
+<div id="map"></div>
+
+<p>Latitude : <span id="lat"></span></p>
+<p>Longitude : <span id="lng"></span></p>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    var map = L.map('map').setView([6.3703, 2.3912], 13); // Exemple : Cotonou
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var marker;
+
+    map.on('click', function(e) {
+
+        if (marker) {
+            map.removeLayer(marker);
+        }
+
+        marker = L.marker(e.latlng).addTo(map);
+
+        document.getElementById("lat").innerText = e.latlng.lat;
+        document.getElementById("lng").innerText = e.latlng.lng;
+    });
+</script>
+
 						
 				</div>
                     <div class="grid__item">
@@ -351,4 +376,5 @@
 
 
 </body></html>
+
 
