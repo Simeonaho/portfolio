@@ -34,8 +34,8 @@ body {
       border-color: rgb(255, 0, 0);
 }
 #map {
-      height: 50px;
-      width: 30px;
+      height: 500px;
+      width: 300px;
 }
 h1,
 h2,
@@ -833,5 +833,6 @@ footer .social a:hover {
   }
 
 }
+
 
 
