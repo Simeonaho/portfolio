@@ -114,37 +114,37 @@
 						
             <h2>Cliquez sur la carte pour indiquer votre position</h2>
 
-<div id="map"></div>
-
-<p>Latitude : <span id="lat"></span></p>
-<p>Longitude : <span id="lng"></span></p>
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-    var map = L.map('map').setView([6.3703, 2.3912], 13); // Exemple : Cotonou
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    var marker;
-
-    map.on('click', function(e) {
-
-        if (marker) {
-            map.removeLayer(marker);
-        }
-
-        marker = L.marker(e.latlng).addTo(map);
-
-        document.getElementById("lat").innerText = e.latlng.lat;
-        document.getElementById("lng").innerText = e.latlng.lng;
-    });
-</script>
+					<div id="map"></div>
+					
+					<p>Latitude : <span id="lat"></span></p>
+					<p>Longitude : <span id="lng"></span></p>
+					
+					<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+					
+					<script>
+					    var map = L.map('map').setView([6.3703, 2.3912], 13); // Exemple : Cotonou
+					
+					    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					        attribution: '&copy; OpenStreetMap contributors'
+					    }).addTo(map);
+					
+					    var marker;
+					
+					    map.on('click', function(e) {
+					
+					        if (marker) {
+					            map.removeLayer(marker);
+					        }
+					
+					        marker = L.marker(e.latlng).addTo(map);
+					
+					        document.getElementById("lat").innerText = e.latlng.lat;
+					        document.getElementById("lng").innerText = e.latlng.lng;
+					    });
+					</script>
 
 						
-				</div>
+			</div>
                     <div class="grid__item">
                         <h2 class="section-title">A propos</h2>
                         <h3>Qui suis-je</h3>
@@ -384,6 +384,7 @@
 
 
 </body></html>
+
 
 
 
