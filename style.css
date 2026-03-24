@@ -36,6 +36,7 @@ body {
 #map {
       height: 300px;
       width: 300px;
+      z-index: 100;
 }
 h1,
 h2,
